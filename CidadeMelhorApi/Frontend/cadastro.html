@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="tela-login">
+        <h1>Cadastro de usuario</h1>
+
+        <form id="formCadastroUsuario">
+            <label for="nomeCadastro">Nome</label>
+            <input id="nomeCadastro" type="text" required>
+
+            <label for="emailCadastro">Email</label>
+            <input id="emailCadastro" type="email" required>
+
+            <label for="senhaCadastro">Senha</label>
+            <input id="senhaCadastro" type="password" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p id="mensagem"></p>
+        <p>Ja tem conta? <a href="login.html">Fazer login</a></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

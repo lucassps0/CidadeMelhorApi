@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidade Melhor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <nav>
+            <strong>Cidade Melhor</strong>
+            <div>
+                <a href="admin-login.html">Admin</a>
+                <button type="button" onclick="sairUsuario()">Sair</button>
+            </div>
+        </nav>
+
+        <h1>Sistema de Denuncias Urbanas</h1>
+        <p id="usuarioLogado"></p>
+
+        <form id="formDenuncia">
+            <label for="descricao">Descricao</label>
+            <textarea id="descricao" rows="4" required></textarea>
+
+            <label for="categoria">Categoria</label>
+            <select id="categoria" required>
+                <option value="">Selecione</option>
+                <option value="Buraco na via">Buraco na via</option>
+                <option value="Vazamento">Vazamento</option>
+                <option value="Lixo Acumulado">Lixo Acumulado</option>
+                <option value="Iluminacao publica">Iluminacao publica</option>
+                <option value="Sinalizacao">Sinalizacao</option>
+                <option value="outros">Outros</option>
+            </select>
+
+            <label for="endereco">Endereco</label>
+            <input id="endereco" type="text" required>
+
+            <button type="submit">Enviar denuncia</button>
+        </form>
+
+        <p id="mensagem"></p>
+
+        <h2>Denuncias cadastradas</h2>
+        <ul id="lista"></ul>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

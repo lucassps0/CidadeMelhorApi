@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 32px;
+    background: #f4f6f8;
+    color: #1f2933;
+}
+
+main {
+    max-width: 920px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.tela-login {
+    max-width: 460px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+a {
+    color: #2563eb;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 16px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+}
+
+button.secundario {
+    background: #475569;
+}
+
+button.perigo {
+    background: #b91c1c;
+}
+
+li {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e2e8f0;
+    list-style: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.erro {
+    color: #b91c1c;
+}
+
+.sucesso {
+    color: #15803d;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.acoes select {
+    width: auto;
+    min-width: 150px;
+}
+
+.filtros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 18px;
+}
+
+.filtros label {
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    body {
+        margin: 12px;
+    }
+
+    nav,
+    nav div,
+    .acoes {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+}
