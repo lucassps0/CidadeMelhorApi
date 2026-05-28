@@ -1,0 +1,14 @@
+@CidadeMelhorApi_HostAddress = http://localhost:5092
+
+GET {{CidadeMelhorApi_HostAddress}}/api/Usuarios
+Accept: application/json
+
+###
+
+GET {{CidadeMelhorApi_HostAddress}}/api/Denuncias
+Accept: application/json
+
+###
+
+GET {{CidadeMelhorApi_HostAddress}}/api/cep/01001000
+Accept: application/json
