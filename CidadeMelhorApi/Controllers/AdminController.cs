@@ -1,3 +1,4 @@
+using CidadeMelhorApi.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CidadeMelhorApi.Controllers
@@ -6,23 +7,29 @@ namespace CidadeMelhorApi.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-        private const string EmailAdmin = "admin@gmail.com";
-        private const string SenhaAdmin = "admin123";
+        private readonly AppDbContext _context;
+
+        public AdminController(AppDbContext context)
+        {
+            _context = context;
+        }
 
         [HttpPost("login")]
         public IActionResult Login(AdminLogin login)
         {
-            if (login.Email == EmailAdmin && login.Senha == SenhaAdmin)
-            {
-                return Ok(new
-                {
-                    id = 1,
-                    nome = "Administrador",
-                    email = EmailAdmin
-                });
-            }
+            var admin = _context.Admins.FirstOrDefault(x =>
+                x.Email == login.Email &&
+                x.Senha == login.Senha);
 
-            return Unauthorized("Email ou senha do admin invalidos.");
+            if (admin == null)
+                return Unauthorized("Email ou senha do admin invalidos.");
+
+            return Ok(new
+            {
+                admin.Id,
+                admin.Nome,
+                admin.Email
+            });
         }
 
         public class AdminLogin

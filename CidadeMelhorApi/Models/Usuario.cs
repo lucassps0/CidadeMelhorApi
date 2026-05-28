@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace CidadeMelhorApi.Models
 {
@@ -11,15 +6,16 @@ namespace CidadeMelhorApi.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage = "O nome é obrigatório.")]
+
+        [Required(ErrorMessage = "O nome e obrigatorio.")]
         public string? Nome { get; set; }
-        [EmailAddress(ErrorMessage = "O email é obrigatório.")]
+
+        [EmailAddress(ErrorMessage = "Digite um email valido.")]
         public string? Email { get; set; }
-        [Required(ErrorMessage = "A senha é obrigatória.")]
+
+        public string? Cpf { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "A senha e obrigatoria.")]
         public string? Senha { get; set; }
-
-        [JsonIgnore]
-        public string Discriminator { get; set; } = "Usuario";
-
     }
 }

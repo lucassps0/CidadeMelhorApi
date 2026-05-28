@@ -6,22 +6,14 @@ namespace CidadeMelhorApi.Models
     {
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "O nome do admin e obrigatorio.")]
+        public string Nome { get; set; } = string.Empty;
 
-        [Required(
-        ErrorMessage = "O nome do admin é obrigatório."
-        )]
-        public string Nome { get; set; }
+        [Required(ErrorMessage = "O email e obrigatorio.")]
+        [EmailAddress(ErrorMessage = "Digite um email valido.")]
+        public string Email { get; set; } = string.Empty;
 
-
-        [EmailAddress(
-        ErrorMessage = "O e-mail é obrigatório."
-        )]
-        public string Email { get; set; }
-
-
-        [Required(
-        ErrorMessage = "A senha é obrigatória."
-        )]
-        public string Senha { get; set; }
+        [Required(ErrorMessage = "A senha e obrigatoria.")]
+        public string Senha { get; set; } = string.Empty;
     }
 }
